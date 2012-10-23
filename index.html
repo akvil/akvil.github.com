@@ -1,15 +1,3 @@
-<?php $uri = $_SERVER['REQUEST_URI'];
-if($_SERVER['HTTP_HOST'] == "localhost"){
-	$uri = str_replace("/akvil/", "", $uri);
-}
-else{
-	$uri = str_replace("/", "", $uri);
-}
-$uri_array = array("home", "about", "art", "video", "contact");
-if(!array_search($uri, $uri_array) && $uri != ""){
-	header("HTTP/1.0 404 Not Found"); die;
-}
-?>
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
@@ -37,7 +25,7 @@ if(!array_search($uri, $uri_array) && $uri != ""){
 		<div id="face_3"></div>
 		<div id="face_4"></div>
 	</div>
-		<div id="home" class="section <?php if($uri == "" || $uri == "home"): ?> active <?php endif; ?>">
+		<div id="home" class="section active">
 			<div>
 				i am Akvil <br>
 				i Wonder <br>
@@ -46,7 +34,7 @@ if(!array_search($uri, $uri_array) && $uri != ""){
 				i Paint
 			</div>
 		</div>
-		<div id="about" class="section <?php if($uri == "about"): ?> active <?php endif; ?>">
+		<div id="about" class="section">
 			<div>
 				<h1>About Me</h1>
 				<br><br><br>
@@ -64,17 +52,17 @@ if(!array_search($uri, $uri_array) && $uri != ""){
 				<br>
 				I present to you my daily experiences, opinions and observations. The work displays the perception of a free human being, just another guy.</div>
 		</div>
-		<div id="work" class="section <?php if($uri == "art"): ?> active <?php endif; ?>">
+		<div id="work" class="section">
 			<div>
 				<h1>Art</h1>
 			</div>
 		</div>
-		<div id="video" class="section <?php if($uri == "video"): ?> active <?php endif; ?>">
+		<div id="video" class="section">
 			<div>
 				<h1>Films and Photography</h1>
 			</div>
 		</div>
-		<div id="contact" class="section <?php if($uri == "contact"): ?> active <?php endif; ?>">
+		<div id="contact" class="section">
 			<div>
 				<h1>Contact</h1>
 				<br><br><br>
