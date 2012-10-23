@@ -1,0 +1,132 @@
+<?php $uri = $_SERVER['REQUEST_URI'];
+if($_SERVER['HTTP_HOST'] == "localhost"){
+	$uri = str_replace("/akvil/", "", $uri);
+}
+else{
+	$uri = str_replace("/", "", $uri);
+}
+$uri_array = array("home", "about", "art", "video", "contact");
+if(!array_search($uri, $uri_array) && $uri != ""){
+	header("HTTP/1.0 404 Not Found"); die;
+}
+?>
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">	
+	<title>Akvil</title>
+	<link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="http://home.iitb.ac.in/~amol_mandhane/temp_images/jquery.backgroundpos.min.js"></script>
+	<!-- Make IE8 and below responsive by adding CSS3 MediaQuery support -->
+	<!--[if lt IE 9]>
+		<script type="text/javascript" src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+	<!-- Youtube Iframe API (optional, for HD video) -->
+	<script src="http://www.youtube.com/iframe_api"></script>
+	<!-- Fresco -->
+	<script src="js/fresco.js"></script>
+	<link rel="stylesheet" href="css/fresco.css"/>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="wrapper" id="face-wrapper">
+		<div id="face_1"></div>
+		<div id="face_2"></div>
+		<div id="face_3"></div>
+		<div id="face_4"></div>
+	</div>
+		<div id="home" class="section <?php if($uri == "" || $uri == "home"): ?> active <?php endif; ?>">
+			<div>
+				i am Akvil <br>
+				i Wonder <br>
+				i Imagine <br>
+				i Dream <br>
+				i Paint
+			</div>
+		</div>
+		<div id="about" class="section <?php if($uri == "about"): ?> active <?php endif; ?>">
+			<div>
+				<h1>About Me</h1>
+				<br><br><br>
+				Hello! My name is Akvil and I am an artist, who loves to explore and learn. Studying Mechanical engineering at IIT Bombay currently, I paint my thoughts and musings every day. Welcome to my work collection. A visual story, I’d like to call.
+				<br><br>
+				Why?  I paint not because I have to but because I want to.
+				<br>
+				Painting, for me, is the purest form of self-expression. In the social world, everybody has opinions and as far as it goes, those of people in authority are accepted as rules. Frankly, I don’t think of this as the best way, I believe in expression of an individual’s feeling. Fine arts are a great means of inspiration as well, for me and for the people around. Apart from all this, painting has now become a routine and a mode of self-discipline. When someone does something regularly and sincerely, he/she grows each day as a person and as a performer.
+				<br><br>
+				How?
+				<br>
+				Besides the technicalities &lt;medium, base and colours and blah&gt;, there is one very important thing in creating an art. You realize the energy of the moment, let it flow, meditate your thought on the present moment and let it arise as your creation.
+				<br><br>
+				What?
+				<br>
+				I present to you my daily experiences, opinions and observations. The work displays the perception of a free human being, just another guy.</div>
+		</div>
+		<div id="work" class="section <?php if($uri == "art"): ?> active <?php endif; ?>">
+			<div>
+				<h1>Art</h1>
+			</div>
+		</div>
+		<div id="video" class="section <?php if($uri == "video"): ?> active <?php endif; ?>">
+			<div>
+				<h1>Films and Photography</h1>
+			</div>
+		</div>
+		<div id="contact" class="section <?php if($uri == "contact"): ?> active <?php endif; ?>">
+			<div>
+				<h1>Contact</h1>
+				<br><br><br>
+				<h3>akviltheeagle@gmail.com</h3>
+				<br><br><br>
+				<div class="main-social div">
+					<a href="#"><img src="img/social/facebook.png" alt="Facebook"></a>
+					<a href="#"><img src="img/social/twitter.png" alt="Twitter"></a>
+					<a href="#"><img src="img/social/google.png" alt="Google +"></a>
+				</div>
+				<br><br>
+				<div class="div sub-social">
+					<a href="#"><img src="img/social/youtube.png" alt="Youtube"></a>
+					<a href="#"><img src="img/social/wordpress.png" alt="Wordpress"></a>
+					<a href="#"><img src="img/social/vimeo.png" alt="Vimeo"></a>
+					<a href="#"><img src="img/social/tumblr.png" alt="Tumbler"></a>
+					<a href="#"><img src="img/social/flickr.png" alt="Flickr"></a>
+					<a href="#"><img src="img/social/deviantart.png" alt="Deviant Art"></a>
+					<a href="#"><img src="img/social/linkedin.png" alt="Linked In"></a>
+				</div>
+			</div>
+		</div>
+
+		<div id="button-wrapper">
+			<div class="face-move" id="f0"><img src="img/home.png" alt="Home"></div>
+			<div class="face-move" id="f1"><img src="img/about.png" alt="About"></div>
+			<div class="face-move" id="f2"><img src="img/work.png" alt="Paintings"></div>
+			<div class="face-move" id="f3"><img src="img/video.png" alt="Videos"></div>
+			<div class="face-move" id="f4"><img src="img/contact.png" alt="Contact"></div>
+		</div>
+	<div id="fff"></div>
+	<script>
+		var resizer = function(){
+			var wrapper = $('#face-wrapper');
+			var height = window.innerHeight + 2;
+			var width = 1.77 * height;
+
+			wrapper.css({width: width+"px", height: height+"px"});
+		}
+
+		resizer();
+
+		var nav_relocator = function(){
+			var nav_bar = $('#button-wrapper');
+			var height = parseInt(nav_bar.height());
+			var top = parseInt(nav_bar.position().top);
+			nav_bar.css({top: (top - height/2) + "px"});
+		};
+
+		nav_relocator();
+
+	</script>
+	<script src="js/application.js"></script>
+</body>
+</html>

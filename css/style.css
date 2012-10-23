@@ -1,0 +1,147 @@
+body{
+	background: white;
+	font-family: 'Sofia Pro';
+	overflow: hidden;
+	clear: both;
+}
+
+.wrapper{
+	position: relative;
+	overflow: hidden;
+}
+
+#face_1{
+	background: url('http://home.iitb.ac.in/~amol_mandhane/temp_images/face_1.jpg') no-repeat;
+	background-size: 100%;
+	width: 100%;
+	height: 29.166666%;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+#face_2{
+	background: url('http://home.iitb.ac.in/~amol_mandhane/temp_images/face_2.jpg') no-repeat;
+	background-size: 100%;
+	width: 100%;
+	height: 17.833333%;
+	background-position: 0% 35%;
+	position:absolute;
+	top: 29.166666%;
+	left:0;
+}
+
+
+#face_3{
+	background: url('http://home.iitb.ac.in/~amol_mandhane/temp_images/face_3.jpg') no-repeat;
+	background-size: 100%;
+	width: 100%;
+	height: 28%;
+	background-position: 0% 65%;
+	position:absolute;
+	top: 47%;
+	left:0;
+}
+#face_4{
+	background: url('http://home.iitb.ac.in/~amol_mandhane/temp_images/face_4.jpg') no-repeat;
+	background-size: 100%;
+	width: 100%;
+	height: 25%;
+	background-position: 0% 100%;
+	position:absolute;
+	top: 74.9%;
+	left:0;
+}
+
+.section{
+	position: absolute;
+	/*width: 50%;*/
+	width: 0;
+	height: 100%;
+	left: 100%;
+	top:0;
+	color: white;
+	overflow: hidden;
+
+	background: rgba(0,0,0,0.7);
+	display: none;
+}
+.section h1{
+	font-family: 'Sofia';
+	font-size: 48px;
+}
+.section h2{
+	font-family: 'Sofia';
+	font-size: 36px;
+}
+.section h3{
+	font-family: 'Sofia';
+	font-size: 24px;
+}
+.section div{
+	display: table-cell;
+	vertical-align: middle;
+}
+.section.active{
+	width: 50%;
+	left: 50%;
+	display: table;
+}
+.section div:not(.div){
+	padding-left: 10%;
+	padding-right: 10%;
+}
+#home div{
+	padding-left: 30%;
+	font-family: "Sofia";
+	font-size: 64px;
+}
+
+#button-wrapper{
+	position: absolute;
+	right: 0;
+	top: 50%;
+}
+
+#button-wrapper .face-move{
+	position: relative;
+	background: rgba(0,0,0,0.5);
+	margin-bottom: 5%;
+	padding: 15% 0%;
+	text-align: center;
+	cursor: pointer;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+#button-wrapper .face-move:hover{
+	background: #E34A28;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+#button-wrapper .face-move img{
+	width: 50%;
+	height: auto;
+}
+
+.div{
+	position: relative;
+	width: 100%;
+	display: block;
+}
+
+.main-social img{
+	position: relative;
+	width: 31%;
+}
+
+.sub-social img{
+	width: 10%;
+}
